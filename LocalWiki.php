@@ -1022,3 +1022,171 @@ switch ( $wi->dbname ) {
 
 		break;
 }
+	case 'nlgwiki':
+		$uwCcAvailableLanguages = [
+			'en', 'ru'
+		];
+		$wgUploadWizardConfig = [
+			'uwLanguages' => [
+				'ru' => 'Русский',
+				'en' => 'English',
+			],
+		'licenses' => [
+			'cc-by-sa-4.0' => [
+				'msg' => 'mwe-upwiz-license-cc-by-sa-4.0-text',
+				'msgExplain' => 'mwe-upwiz-source-ownwork-cc-by-sa-4.0-explain',
+				'icons' => [ 'cc-by', 'cc-sa' ],
+				'url' => '//creativecommons.org/licenses/by-sa/4.0/',
+				'languageCodePrefix' => 'deed.',
+				'availableLanguages' => $uwCcAvailableLanguages
+			],
+			'cc-by-4.0' => [
+				'msg' => 'mwe-upwiz-license-cc-by-4.0-text',
+				'msgExplain' => 'mwe-upwiz-source-ownwork-cc-by-4.0-explain',
+				'icons' => [ 'cc-by' ],
+				'url' => '//creativecommons.org/licenses/by/4.0/',
+				'languageCodePrefix' => 'deed.',
+				'availableLanguages' => $uwCcAvailableLanguages
+			],
+			'cc-zero' => [
+				'msg' => 'mwe-upwiz-license-cc-zero-text',
+				'msgExplain' => 'mwe-upwiz-source-ownwork-cc-zero-explain',
+				'icons' => [ 'cc-zero' ],
+				'url' => '//creativecommons.org/publicdomain/zero/1.0/',
+				'languageCodePrefix' => 'deed.',
+				'availableLanguages' => $uwCcAvailableLanguages
+			],
+			'own-pd' => [
+				'msg' => 'mwe-upwiz-license-own-pd-text',
+				'icons' => [ 'cc-zero' ],
+				'templates' => [ 'cc-zero' ]
+			],
+			'fal' => [
+				'msg' => 'mwe-upwiz-license-fal',
+				'templates' => [ 'FAL' ]
+			],
+			'pd-old-100' => [
+				'msg' => 'mwe-upwiz-license-pd-old-100',
+				'templates' => [ 'PD-old-100' ]
+			],
+			'pd-old' => [
+				'msg' => 'mwe-upwiz-license-pd-old',
+				'templates' => [ 'PD-old' ]
+			],
+			'pd-art' => [
+				'msg' => 'mwe-upwiz-license-pd-art-70',
+				'templates' => [ 'PD-Art|PD-old-70' ],
+				'url' => '//commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain',
+			],
+			'pd-us-generic' => [
+				'msg' => 'mwe-upwiz-license-pd-us-generic',
+				'templates' => [ 'PD-US' ]
+			],
+			'pd-us' => [
+				'msg' => 'mwe-upwiz-license-pd-us',
+				'templates' => [ 'PD-US-expired' ]
+			],
+			'pd-old-70-expired' => [
+				'msg' => 'mwe-upwiz-license-pd-old-70-1923',
+				'templates' => [ 'PD-old-70-expired' ],
+			],
+			'pd-old-70' => [
+				'msg' => 'mwe-upwiz-license-pd-old-70',
+				'templates' => [ 'PD-old-70' ],
+			],
+			'pd-usgov' => [
+				'msg' => 'mwe-upwiz-license-pd-usgov',
+				'templates' => [ 'PD-USGov' ]
+			],
+			'pd-usgov-nasa' => [
+				'msg' => 'mwe-upwiz-license-pd-usgov-nasa',
+				'templates' => [ 'PD-USGov-NASA' ]
+			],
+			'pd-ineligible' => [
+				'msg' => 'mwe-upwiz-license-pd-ineligible'
+			],
+			'pd-textlogo' => [
+				'msg' => 'mwe-upwiz-license-pd-textlogo',
+				'templates' => [ 'trademarked', 'PD-textlogo' ]
+			],
+			'attribution' => [
+				'msg' => 'mwe-upwiz-license-attribution'
+			],
+			'gfdl' => [
+				'msg' => 'mwe-upwiz-license-gfdl',
+				'templates' => [ 'GFDL' ]
+			],
+			'none' => [
+				'msg' => 'mwe-upwiz-license-none',
+				'templates' => [ 'subst:uwl' ]
+			],
+			'unknown' => [
+				'msg' => 'mwe-upwiz-license-unknown',
+				'msgWarning' => 'mwe-upwiz-license-unknown-warning',
+				'templates' => [ 'subst:uwl' ]
+			],
+			'unsure' => [
+				'msg' => 'mwe-upwiz-license-unsure',
+				'templates' => [ 'subst:uwl' ]
+			],
+			'custom' => [
+				'msg' => 'mwe-upwiz-license-custom',
+				'templates' => [],
+				'url' => wfMessage( 'mwe-upwiz-license-custom-url' )->parse(),
+				'special' => 'input',
+				'msgSpecial' => 'mwe-upwiz-license-custom-explain'
+			],
+			'custom-pd' => [
+				'msg' => 'mwe-upwiz-license-custom-pd',
+				'templates' => [],
+				'url' => wfMessage( 'mwe-upwiz-license-custom-pd-url' )->parse(),
+				'special' => 'input',
+				'msgSpecial' => 'mwe-upwiz-license-custom-pd-explain'
+			],
+			'vrt' => [
+				'msg' => 'mwe-upwiz-license-vrt',
+				'templates' => [ 'Permission_pending' ]
+			],
+			'generic' => [
+				'msg' => 'mwe-upwiz-license-generic',
+				'msgExplain' => 'mwe-upwiz-source-ownwork-generic-explain',
+				'templates' => [ 'Generic' ]
+			]
+		],
+			'licensing' => [
+				'ownWork' => [
+					'type' => 'or',
+					'template' => 'self',
+					'defaults' => 'cc-by-sa-4.0',
+					'licenses' => [
+						'cc-zero',
+						'cc-by-4.0',
+						'cc-by-sa-4.0',
+						'custom',
+					]
+				],
+				'thirdParty' => [
+					'type' => 'or',
+					'defaults' => 'cc-by-nc-sa-4.0',
+					'licenseGroups' => [
+						[
+							'head' => 'mwe-upwiz-license-cc-head',
+							'subhead' => 'mwe-upwiz-license-cc-subhead',
+							'licenses' => [
+								'cc-zero',
+								'cc-by-4.0',
+								'cc-by-3.0',
+								'cc-by-2.5',
+								'cc-by-sa-4.0',
+								'cc-by-sa-3.0',
+								'cc-by-sa-2.5',
+								'custom',
+								'unknown',
+							]
+						],
+					],
+				],
+			],
+			'templateOptions' => [],
+		];
+		break;
